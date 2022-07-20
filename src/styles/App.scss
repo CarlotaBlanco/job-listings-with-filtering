@@ -2,4 +2,7 @@
   width: 100vw;
   height: 10vh;
   background-image: url(../images/bg-header-mobile.svg);
+  @media all and(min-width: 1400px) {
+    background-image: url(../images/bg-header-desktop.svg);
+  }
 }

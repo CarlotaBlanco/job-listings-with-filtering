@@ -12,18 +12,21 @@ function JobList(props) {
   const tools = props.job.tools.map((tool, index) => {
     return (
       <li className='item-container__tags--element' key={index}>
-        {tool}{' '}
+        {tool}
       </li>
     );
   });
   return (
-    <div className='item-container'>
+    <div
+      className={`item-container
+    ${props.job.featured ? 'featured' : ''}`}
+    >
       <img
         className='item-container__image'
         src={`../${props.job.logo}`}
         alt='Logo'
       />
-      <div>
+      <div className='item-container__data'>
         <div className='item-container__company'>
           <h2 className='item-container__company--name'>{props.job.company}</h2>
           {props.job.new && (
@@ -43,7 +46,7 @@ function JobList(props) {
         </ul>
       </div>
 
-      <div>
+      <div className='item-container__filters'>
         <ul className='item-container__tags'>
           <li className='item-container__tags--element'>{props.job.role}</li>
           <li className='item-container__tags--element'>{props.job.level}</li>
