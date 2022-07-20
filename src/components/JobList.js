@@ -5,7 +5,7 @@ function JobList(props) {
   const jobListElements = props.data.map((job) => {
     return (
       <li key={job.id} className='results_list__items'>
-        <JobItem job={job}></JobItem>
+        <JobItem savedValue={props.savedValue} job={job}></JobItem>
       </li>
     );
   });

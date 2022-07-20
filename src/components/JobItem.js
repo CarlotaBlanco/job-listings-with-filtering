@@ -1,17 +1,31 @@
 import '../styles/JobItem.scss';
 
 function JobList(props) {
+  const handleSaveTag = (event) => {
+    props.savedValue(event.target.id);
+  };
+
   const languages = props.job.languages.map((language, index) => {
     return (
-      <li className='item-container__tags--element' key={index}>
-        {language}{' '}
+      <li
+        id={language}
+        onClick={handleSaveTag}
+        className='item-container__tags--element'
+        key={index}
+      >
+        {language}
       </li>
     );
   });
 
   const tools = props.job.tools.map((tool, index) => {
     return (
-      <li className='item-container__tags--element' key={index}>
+      <li
+        id={tool}
+        onClick={handleSaveTag}
+        className='item-container__tags--element'
+        key={index}
+      >
         {tool}
       </li>
     );
@@ -48,8 +62,20 @@ function JobList(props) {
 
       <div className='item-container__filters'>
         <ul className='item-container__tags'>
-          <li className='item-container__tags--element'>{props.job.role}</li>
-          <li className='item-container__tags--element'>{props.job.level}</li>
+          <li
+            className='item-container__tags--element'
+            id={props.job.role}
+            onClick={handleSaveTag}
+          >
+            {props.job.role}
+          </li>
+          <li
+            className='item-container__tags--element'
+            id={props.job.level}
+            onClick={handleSaveTag}
+          >
+            {props.job.level}
+          </li>
           {languages}
           {tools}
         </ul>
