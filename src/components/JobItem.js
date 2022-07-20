@@ -1,38 +1,57 @@
+import '../styles/JobItem.scss';
+
 function JobList(props) {
   const languages = props.job.languages.map((language, index) => {
-    return <li key={index}>{language} </li>;
+    return (
+      <li className='item-container__tags--element' key={index}>
+        {language}{' '}
+      </li>
+    );
   });
 
   const tools = props.job.tools.map((tool, index) => {
-    return <li key={index}>{tool} </li>;
+    return (
+      <li className='item-container__tags--element' key={index}>
+        {tool}{' '}
+      </li>
+    );
   });
   return (
-    <article>
-      <img src={`../${props.job.logo}`} alt='Logo' />
+    <div className='item-container'>
+      <img
+        className='item-container__image'
+        src={`../${props.job.logo}`}
+        alt='Logo'
+      />
       <div>
-        <ul>
-          <li>
-            <h2>{props.job.company}</h2>
-          </li>
-          {props.job.new && <li>NEW!</li>}
-          {props.job.featured && <li>FEATURED</li>}
-        </ul>
-        <h1>{props.job.position}</h1>
-        <ul>
-          <li>{props.job.postedAt}</li>
-          <li>{props.job.contract}</li>
-          <li>{props.job.location}</li>
+        <div className='item-container__company'>
+          <h2 className='item-container__company--name'>{props.job.company}</h2>
+          {props.job.new && (
+            <p className='item-container__company--new'>NEW!</p>
+          )}
+          {props.job.featured && (
+            <p className='item-container__company--featured'>FEATURED</p>
+          )}
+        </div>
+        <h1 className='item-container__position'>{props.job.position}</h1>
+        <ul className='item-container__info'>
+          <li className='item-container__info--item'>{props.job.postedAt}</li>
+          <li className='item-container__info--item'>·</li>
+          <li className='item-container__info--item'>{props.job.contract}</li>
+          <li className='item-container__info--item'>·</li>
+          <li className='item-container__info--item'>{props.job.location}</li>
         </ul>
       </div>
+
       <div>
-        <ul>
-          <li>{props.job.role}</li>
-          <li>{props.job.level}</li>
+        <ul className='item-container__tags'>
+          <li className='item-container__tags--element'>{props.job.role}</li>
+          <li className='item-container__tags--element'>{props.job.level}</li>
           {languages}
           {tools}
         </ul>
       </div>
-    </article>
+    </div>
   );
 }
 export default JobList;

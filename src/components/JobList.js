@@ -1,4 +1,5 @@
 import JobItem from './JobItem';
+import '../styles/JobList.scss';
 
 function JobList(props) {
   const jobListElements = props.data.map((job) => {
