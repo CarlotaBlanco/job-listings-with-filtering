@@ -1,3 +1,14 @@
-function JobList() {}
+import JobItem from './JobItem';
+
+function JobList(props) {
+  const jobListElements = props.data.map((job) => {
+    return (
+      <li key={job.id} className='results_list__items'>
+        <JobItem job={job}></JobItem>
+      </li>
+    );
+  });
+  return <ul className='results_list'>{jobListElements}</ul>;
+}
 
 export default JobList;
