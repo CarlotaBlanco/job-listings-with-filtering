@@ -14,6 +14,13 @@ function App() {
     }
   };
 
+  const handleClearTag = (value) => {
+    const filteredTag = selected.filter((tag) => tag !== value);
+    setSelected(filteredTag);
+  };
+
+  console.log(selected);
+
   const filter = data.filter((item) => {
     const tag = [item.role, item.level];
     if (item.languages) {
@@ -29,7 +36,7 @@ function App() {
     <div className='App'>
       <header className='header'></header>
       <main>
-        <Filter filter={selected}></Filter>
+        <Filter filter={selected} clearTag={handleClearTag}></Filter>
         <JobList data={filter} savedValue={handleSaveTag}></JobList>
       </main>
     </div>
