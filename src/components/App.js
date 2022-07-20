@@ -1,14 +1,14 @@
-import logo from '../images/logo.svg';
+import jobs from '../data/dataJobs.json';
+import { useState } from 'react';
 import '../styles/App.scss';
 
 function App() {
+  const [data, setData] = useState(jobs);
+  console.log(jobs);
   return (
-    <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis alias fuga odio odit atque expedita assumenda numquam quidem, voluptatibus facere ullam eos quos iusto beatae sit perspiciatis dolore laudantium minus.
-        </p>
+    <div className='App'>
+      <header className='header'></header>
+      <main></main>
     </div>
   );
 }
