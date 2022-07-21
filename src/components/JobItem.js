@@ -35,11 +35,7 @@ function JobList(props) {
       className={`item-container
     ${props.job.featured ? 'featured' : ''}`}
     >
-      <img
-        className='item-container__image'
-        src={`../${props.job.logo}`}
-        alt='Logo'
-      />
+      <img className='item-container__image' src={props.job.logo} alt='Logo' />
       <div className='item-container__data'>
         <div className='item-container__company'>
           <h2 className='item-container__company--name'>{props.job.company}</h2>
