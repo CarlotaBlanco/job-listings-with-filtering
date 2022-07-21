@@ -2,13 +2,13 @@ import '../styles/JobItem.scss';
 
 function JobList(props) {
   const handleSaveTag = (event) => {
-    props.savedValue(event.target.id);
+    props.savedValue(event.target.dataset.name);
   };
 
   const languages = props.job.languages.map((language, index) => {
     return (
       <li
-        id={language}
+        data-name={language}
         onClick={handleSaveTag}
         className='item-container__tags--element'
         key={index}
@@ -21,7 +21,7 @@ function JobList(props) {
   const tools = props.job.tools.map((tool, index) => {
     return (
       <li
-        id={tool}
+        data-name={tool}
         onClick={handleSaveTag}
         className='item-container__tags--element'
         key={index}
@@ -60,14 +60,14 @@ function JobList(props) {
         <ul className='item-container__tags'>
           <li
             className='item-container__tags--element'
-            id={props.job.role}
+            data-name={props.job.role}
             onClick={handleSaveTag}
           >
             {props.job.role}
           </li>
           <li
             className='item-container__tags--element'
-            id={props.job.level}
+            data-name={props.job.level}
             onClick={handleSaveTag}
           >
             {props.job.level}
