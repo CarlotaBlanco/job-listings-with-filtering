@@ -9,6 +9,7 @@ $light-grayish-cyan-tag: hsl(180, 31%, 95%);
   padding: 0 5%;
   background-color: white;
   border-radius: 5px;
+  box-shadow: 10px 10px 37px -4px rgba(0, 0, 0, 0.2);
 
   @media all and(min-width: 768px) {
     flex-direction: row;
