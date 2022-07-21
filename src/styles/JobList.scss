@@ -1,9 +1,6 @@
 .results_list {
   padding: 0;
-  margin: 10% 0 0;
-  @media all and(min-width: 1400px) {
-    margin: 5% 0 0;
-  }
+
   &__items {
     padding: 5%;
     @media all and(min-width: 1400px) {

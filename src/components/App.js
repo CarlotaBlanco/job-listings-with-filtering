@@ -19,6 +19,10 @@ function App() {
     setSelected(filteredTag);
   };
 
+  const handleResetSelected = () => {
+    setSelected([]);
+  };
+
   console.log(selected);
 
   const filter = data.filter((item) => {
@@ -36,7 +40,11 @@ function App() {
     <div className='App'>
       <header className='header'></header>
       <main>
-        <Filter filter={selected} clearTag={handleClearTag}></Filter>
+        <Filter
+          filter={selected}
+          clearTag={handleClearTag}
+          handleResetSelected={handleResetSelected}
+        ></Filter>
         <JobList data={filter} savedValue={handleSaveTag}></JobList>
       </main>
     </div>
